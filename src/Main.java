@@ -1,9 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
-public class Actions extends JPanel {
+public class Main extends JPanel implements ActionListener {
+
+    Timer timer = new Timer(20, this);
 
     Image image = new ImageIcon("src/test.jpg").getImage();
 
@@ -15,4 +19,8 @@ public class Actions extends JPanel {
         graphics.drawImage(image, 0, 0, 250,250,null);
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
 }
