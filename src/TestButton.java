@@ -5,7 +5,8 @@ import java.awt.event.ActionListener;
 
 public class TestButton implements ActionListener {
 
-    JLabel label; 
+    public JLabel label;
+
 
     public TestButton() {
 
@@ -24,9 +25,16 @@ public class TestButton implements ActionListener {
         frame.add(buttonOne);
         frame.add(buttonTwo);
 
+        frame.setBackground(Color.GREEN);
+
         buttonOne.addActionListener(this);
         buttonTwo.addActionListener(this);
 
+        // создаю новую панель, добавляю в рамку и закрашиваю (уродски)
+        JPanel panel = new JPanel();
+        panel.setBackground(Color.lightGray);
+        panel.setPreferredSize(new Dimension(1200,1200));
+        frame.add(panel);
 
         frame.pack();
         frame.setVisible(true);
@@ -37,9 +45,9 @@ public class TestButton implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
 
         if(ae.getActionCommand().equals("Red tablet TEST"))
-            label.setText("You pressed Red tablet.");
+            label.setText("You wish Red tablet");
         else
-            label.setText("You pressed down. ");
+            label.setText("You wish blue tablet.");
     }
 
     public static void main(String[] args) {
